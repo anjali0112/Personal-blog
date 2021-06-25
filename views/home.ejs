@@ -1,0 +1,13 @@
+<%-include("partials/header")%>
+
+<h1>Home</h1>
+<p><%=content%></p>
+<%title%>
+<%title.forEach((item,index) => {%>
+    <%content = title[index].post;%>
+    <% content=content.substr(0,200) + "...";%>
+	<h1><%=title[index].title%></h1>
+	<p><%=content %><a href="/posts/<%=item.title%>">Read More</a></p>
+<%})%>
+
+<%-include("partials/footer")%>
